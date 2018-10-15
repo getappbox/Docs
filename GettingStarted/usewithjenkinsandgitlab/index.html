@@ -803,14 +803,17 @@
 <h2 id="2-setup-jenkins-project-and-configurations">2. Setup Jenkins Project and Configurations</h2>
 <h4 id="21-create-project">2.1 Create Project</h4>
 <p>Create a new Jenkins project using freestyle option.
-<strong>Jenkins → New Item → Enter project name → Freestyle project → Click OK.</strong>
-![](/CICD/1. Jenkins Create Project.png)</p>
+<strong>Jenkins → New Item → Enter project name → Freestyle project → Click OK.</strong> <br />
+<img alt="" src="https://github.com/getappbox/Home/blob/master/Images/CICD/1.%20Jenkins%20Create%20Project.png?raw=true" /></p>
 <h4 id="22-general-configurations">2.2 General Configurations</h4>
-<p>In general configurations, you can <strong>Enable project-based security</strong>. In which you can manage the different project member with their access level.</p>
+<p>In general configurations, you can <strong>Enable project-based security</strong>. In which you can manage the different project member with their access level.
+<img alt="" src="https://github.com/getappbox/Home/blob/master/Images/CICD/2.%20General%20Configurations.png?raw=true" /></p>
 <h4 id="23-source-code-management">2.3 Source Code Management</h4>
-<p>Check Git in the section Source Code Management and enter the url of the repository and select the right credentials.</p>
+<p>Check Git in the section Source Code Management and enter the url of the repository and select the right credentials.
+<img alt="" src="https://github.com/getappbox/Home/blob/master/Images/CICD/3.%20Source%20Code%20Management.png?raw=true" /></p>
 <h4 id="24-build-triggers">2.4 Build Triggers</h4>
-<p>In <strong>Build triggers</strong> section check the option to <strong>Build when a change is pushed to GitLab</strong>. This will trigger the build when a change is pushed to Gitlab. There’s a small bug with the plugin key generation so <strong>Save or Apply</strong> the changes to the job first, then under Advanced <strong>generate a key</strong>. Gitlab requires this key. Here you can also apply the filter by branches name.</p>
+<p>In <strong>Build triggers</strong> section check the option to <strong>Build when a change is pushed to GitLab</strong>. This will trigger the build when a change is pushed to Gitlab. There’s a small bug with the plugin key generation so <strong>Save or Apply</strong> the changes to the job first, then under Advanced <strong>generate a key</strong>. Gitlab requires this key. Here you can also apply the filter by branches name.
+<img alt="" src="https://github.com/getappbox/Home/blob/master/Images/CICD/4.%20Build%20Triggers.png?raw=true" /></p>
 <h4 id="25-connect-gitlab-and-jenkins">2.5 Connect GitLab And Jenkins</h4>
 <p>In this setup you’ll setup your GitLab repository for Jenkins, so that Jenkins is automatically notified when there’s a new commit to the GitLab repository and can commit successful builds back to it. To do this:</p>
 <p><strong>2.5.1</strong> Open GitLab and browse to the GitLab page for the project.
@@ -820,11 +823,13 @@
  — In the <strong>Secret Token</strong> field, enter the <strong>Secret token</strong> form Setup 2.4.
  — In the list of triggers, select the events that should trigger a new Jenkins build, such as new <strong>Push Events</strong> or <strong>Accept Merge Request Events</strong>. 
  — Click Add Webhook.</p>
+<p><img alt="" src="https://github.com/getappbox/Home/blob/master/Images/CICD/5.%20Connect%20GitLab%20And%20Jenkins.png?raw=true" /></p>
 <h4 id="26-build">2.6 Build</h4>
 <p>In Build step, we need to execute AppBox with current workspace. So, add the following command</p>
 <pre><code class="bash">/Applications/AppBox.app/Contents/MacOS/AppBox build=$WORKSPACE
 </code></pre>
 
+<p><img alt="" src="https://github.com/getappbox/Home/blob/master/Images/CICD/6.%20Build%20Script.png?raw=true" /></p>
 <p>Make sure AppBox must be available in your Applications directory.</p>
 <blockquote>
 <p><strong>build</strong> — Always will be $WORKSPACE (required)
@@ -837,6 +842,7 @@
 
 <h4 id="27-post-build-actions">2.7 Post-build Actions</h4>
 <p>Finally, in the <strong>Post-build Actions</strong> step we need to <strong>Publish build status to GitLab commit</strong> and <strong>Add note with build status on Gitlab merge request.</strong> This enables the feedback and gives us pretty indicators in GitLab commit and merge request.</p>
+<p><img alt="" src="https://github.com/getappbox/Home/blob/master/Images/CICD/7.%20Post-build%20Actions.png?raw=true" /></p>
 <p>Your Continuous Integration (CI) and Continuous Delivery (CD) with Jenkins and AppBox is now ready for use!</p>
                 
                   
