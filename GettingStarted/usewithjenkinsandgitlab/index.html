@@ -748,16 +748,18 @@
 &lt;/plist&gt;
 </code></pre>
 
-<p><strong><code>appBox.plist</code> key description</strong>       <br />
-- <strong>project</strong> (string, required) — Name of the Xcode project/workspace file. Project must be manage signing automatically.
-- <strong>scheme</strong> (string, required) — Name of the scheme to build. Project scheme must be <a href="https://docs.getappbox.com/FAQs/sharexcodeprojectschemes/">shared</a>.
-- <strong>buildtype</strong> (string, required) — "ad-hoc", "enterprise", "app-store" or "development"
-- <strong>teamid</strong> (string, required) — Development TeamId.
-- <strong>email</strong> (string, required) — mail build share url
-- <strong>personalmessage</strong> (string, optional) — Attach personal message in email
-- <strong>keepsamelink</strong> (boolean, optional) — true/false (<a href="https://docs.getappbox.com/Features/keepsamelink/">read more</a>)
-- <strong>dropboxfoldername</strong> (string, optional) — Custom Dropbox Folder Name (By default will be bundle identifier).
-- <strong>itcemail</strong> (string, optional) - iTunesConnect/AppStore Connect email (if buildtype is app-store).</p>
+<p><strong><code>appBox.plist</code> key description</strong> -</p>
+<ul>
+<li><strong>project</strong> (string, required) — Name of the Xcode project/workspace file. Project must be manage signing automatically.</li>
+<li><strong>scheme</strong> (string, required) — Name of the scheme to build. Project scheme must be <a href="https://docs.getappbox.com/FAQs/sharexcodeprojectschemes/">shared</a>.</li>
+<li><strong>buildtype</strong> (string, required) — "ad-hoc", "enterprise", "app-store" or "development"</li>
+<li><strong>teamid</strong> (string, required) — Development TeamId.</li>
+<li><strong>email</strong> (string, required) — mail build share url</li>
+<li><strong>personalmessage</strong> (string, optional) — Attach personal message in email</li>
+<li><strong>keepsamelink</strong> (boolean, optional) — true/false (<a href="https://docs.getappbox.com/Features/keepsamelink/">read more</a>)</li>
+<li><strong>dropboxfoldername</strong> (string, optional) — Custom Dropbox Folder Name (By default will be bundle identifier).</li>
+<li><strong>itcemail</strong> (string, optional) - iTunesConnect/AppStore Connect email (if buildtype is app-store).</li>
+</ul>
 <h4 id="12-private-keys-and-provisioning-profiles">1.2 Private keys and Provisioning Profiles</h4>
 <p>All your private keys and provisioning profile should be in a directory called <code>cert</code> inside project main directory. Directory <code>cert</code> will include certificates and provisioning profile and plist with name <code>appbox.plist</code> <strong>Note</strong> — All private key must have some valid password.</p>
 <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
